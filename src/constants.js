@@ -62,7 +62,7 @@ export const projectInfo = [
         image: UIUX,
         imagemin: PortfolioMin,
         description: "Design is an integral part of a Product's Experience. For that reason I create wireframes, mockups and prototypes of new ideas.",
-        description_large: "The Portfolio you are currently browsing was used as a training ground for React. I played around with MaterialUI and managed to also implement both a Dark and a Light Theme. I used the floating action button of MaterialUI as my contact details' index and customize the site colors based on the projects you are viewing.",
+        description_large: "I often experiment with User Centric or original designs, trying to bring forth a product's highlights. From tinkering with designs of my favorite products, to creating designs of my own, deciding on a product's User Experience is really fascinating. I upload many of these ideas on Dribbble so make sure to check them out. For the design, I use either AdobeXD or Figma.",
         stack: ["AdobeXD", "Figma"],
         links: {Dribbble: "https://dribbble.com/GeorgeKoureas"},
         color: '#FFDE59',
