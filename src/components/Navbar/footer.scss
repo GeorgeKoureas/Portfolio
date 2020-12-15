@@ -1,0 +1,33 @@
+.rotatein {
+    animation: rotate-keyframes 0.3s;
+}
+   
+@keyframes rotate-keyframes {
+    from {
+     transform: rotate(0deg);
+    }
+   
+    to {
+     transform: rotate(90deg);
+    }
+}
+
+
+.rotateout {
+    animation: rotate-keyframes 0.2s;
+}
+   
+@keyframes rotate-keyframes {
+    from {
+     transform: rotate(180deg);
+    }
+   
+    to {
+     transform: rotate(0deg);
+    }
+}
+
+
+.footer {
+    z-index: 1000000;
+}

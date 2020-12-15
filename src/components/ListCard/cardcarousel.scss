@@ -1,0 +1,36 @@
+.arrow-container{
+    display: flex;
+    cursor: pointer;
+  }
+
+
+
+.maincard{
+  margin: - 2em auto auto auto;
+  width: 100%;
+  height: auto;
+}
+
+
+.sidecardleft{
+  height: auto;
+  width: 85%;
+  margin-left: 11.5em;
+}
+
+.sidecardright{
+  height: auto;
+  width: 85%;
+  margin-left: -7em;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .sidecardleft {
+      display: none;
+  }
+
+  .sidecardright {
+    display: none;
+}
+}

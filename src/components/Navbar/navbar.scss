@@ -1,0 +1,51 @@
+.header-dot {
+    margin-top: 0.9rem;
+    padding: 0;
+    padding-right: 0.8rem;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+
+  }
+  
+.header-link:hover .header-dot {
+    display: block;
+    color: #2CB67D;
+}
+
+
+
+.header-link-light h3 {
+  padding: 0px;
+  margin: 0px;
+  color: #232F34;
+}
+
+.header-link-dark h3 {
+    padding: 0px;
+    margin: 0px;
+    color: #fff;
+  }
+
+  
+.header-dot-active {
+    margin-top: 0.9rem;
+    padding: 0;
+    padding-right: 0.8rem;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    color: #2CB67D;
+}
+  
+.header-no-link {
+    pointer-events: none;
+    cursor: default;
+}
+
+
+.header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
