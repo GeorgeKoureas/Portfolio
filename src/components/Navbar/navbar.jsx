@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import Hidden from '@material-ui/core/Hidden'
@@ -46,7 +46,7 @@ export default function ButtonAppBar(props) {
     const projectID = window.location.pathname
     var id = projectID.split('/')
     var currid=''
-    { id.length == 3 ?  currid = id[2] : currid = '' }
+    { id.length === 3 ?  currid = id[2] : currid = '' }
     const project = projectInfo[currid]
 
     const useStyles = makeStyles((theme) => ({

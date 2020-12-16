@@ -1,4 +1,3 @@
-import React from 'react';
 import Beehive from './assets/BeehivePresentationImage.png';
 import Minerva from './assets/MinervaPresentationImage.png';
 import Tracker from './assets/CovidPresentationImage.png';

@@ -6,18 +6,14 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
-import Slide from '@material-ui/core/Slide';
 import Zoom from '@material-ui/core/Zoom';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import Typography from '@material-ui/core/Typography';
 import { motion } from 'framer-motion'
 
 import {
-    FaCode,
     FaChevronLeft,
     FaChevronRight,
-    FaPaperclip,
-    FaPlay,
   } from 'react-icons/fa';
 import { projectInfo } from '../../constants'
 

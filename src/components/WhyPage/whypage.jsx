@@ -1,14 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Avatar from '@material-ui/core/Avatar';
-import George from "../../assets/hero.png";
 import Typography from '@material-ui/core/Typography';
 import { Divider } from '@material-ui/core';
 import Fade from '@material-ui/core/Fade';
-import Chip from '@material-ui/core/Chip';
 
 
 
@@ -34,10 +30,6 @@ export default function WhyPage(props){
           },
           divider: {
             background: '#2CB67D',
-        },
-        title: {
-            marginLeft: 9,
-            marginTop: '0.2em',
         },
         title: {
             marginLeft: 9,

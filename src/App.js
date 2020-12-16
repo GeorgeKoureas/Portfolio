@@ -3,13 +3,13 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Brightness7Icon  from '@material-ui/icons/Brightness7';
 import Brightness3Icon from '@material-ui/icons/Brightness3';
-import { BrowserRouter as Router, Route, Switch, Redirect, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import Navbar from './components/navbar/navbar';
 import MediaCard from './components/listcard/cardcarousel';
 import DetailCard from './components/detailcard/detailcard';
 import HeroPage from './components/heropage/heropage';
 import WhyPage from './components/whypage/whypage';  
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import Footer from './components/navbar/footer';
 
 import './components/listcard/cardcarousel.scss'

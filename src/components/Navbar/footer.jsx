@@ -1,5 +1,4 @@
 import React from 'react';
-import { CssBaseline } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import LinkIcon from '@material-ui/icons/Link';
@@ -15,11 +14,10 @@ import './footer.scss'
 
 export default function FloatingActionButtons(props) {
 
-  const { page } = props.match.params
   const projectID = window.location.pathname
   var id = projectID.split('/')
   var currid=''
-  { id.length == 3 ?  currid = id[2] : currid = '' }
+  { id.length === 3 ?  currid = id[2] : currid = '' }
   const project = projectInfo[currid]
 
   const useStyles = makeStyles((theme) => ({
