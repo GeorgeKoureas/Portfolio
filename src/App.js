@@ -4,15 +4,15 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Brightness7Icon  from '@material-ui/icons/Brightness7';
 import Brightness3Icon from '@material-ui/icons/Brightness3';
 import { BrowserRouter as Router, Route, Switch, Redirect, useLocation } from 'react-router-dom'
-import Navbar from '../src/components/Navbar/navbar';
-import MediaCard from '../src/components/ListCard/cardcarousel';
-import DetailCard from '../src/components/DetailCard/detailcard';
-import HeroPage from '../src/components/HeroPage/heropage';
-import WhyPage from '../src/components/WhyPage/whypage';  
+import Navbar from './components/navbar/navbar';
+import MediaCard from './components/listcard/cardcarousel';
+import DetailCard from './components/detailcard/detailcard';
+import HeroPage from './components/heropage/heropage';
+import WhyPage from './components/whypage/whypage';  
 import { AnimatePresence, motion } from 'framer-motion'
-import Footer from '../src/components/Navbar/footer';
+import Footer from './components/navbar/footer';
 
-import './components/ListCard/cardcarousel.scss'
+import './components/listcard/cardcarousel.scss'
 
 
 export const light = {
