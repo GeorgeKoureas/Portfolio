@@ -46,7 +46,7 @@ export default function ButtonAppBar(props) {
     const projectID = window.location.pathname
     var id = projectID.split('/')
     var currid=''
-    { id.length === 3 ?  currid = id[2] : currid = '' }
+    id.length === 3 ?  currid = id[2] : currid = ''
     const project = projectInfo[currid]
 
     const useStyles = makeStyles((theme) => ({
