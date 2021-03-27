@@ -1,12 +1,12 @@
-import Beehive from './assets/BeehivePresentationImage.png';
-import Minerva from './assets/MinervaPresentationImage.png';
-import Tracker from './assets/CovidPresentationImage.png';
-import Portfolio from './assets/PortfolioPresentationImage.png';
+import Beehive from './assets/BeehivePresentationImage.jpg';
+import Minerva from './assets/MinervaPresentationImage.jpg';
+import Tracker from './assets/CovidPresentationImage.jpg';
+import Portfolio from './assets/PortfolioPresentationImage.jpg';
 import BeehiveMin from './assets/BeehivePresentationImage-min.png';
 import MinervaMin from './assets/MinervaPresentationImage-min.png';
 import TrackerMin from './assets/CovidPresentationImage-min.png';
 import PortfolioMin from './assets/PortfolioPresentationImage-min.png';
-import UIUX from './assets/UI_UXPresentationImage.png';
+import UIUX from './assets/UI_UXPresentationImage.jpg';
 
 
 

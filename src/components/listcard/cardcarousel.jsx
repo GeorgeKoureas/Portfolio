@@ -57,10 +57,16 @@ export default function MediaCard() {
     }
     
     const useStyles = makeStyles(theme => ({
+      mainwrapper:{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        width: '100%',
+        position: 'relative',
+    },
         wrapper: {
             width: "100%",
             marginTop: "10em",
-            flexGrow: 1,
             justifyContent: "center",
         },
         gridroot: {
@@ -82,14 +88,13 @@ export default function MediaCard() {
           }
         },
         content: {
-            width: "100%"
+            width: "100%",
+            height: "130px",
         },
         carsl: {
           width: '100%',
-          height: '75vh',
           [theme.breakpoints.down("xs")] : {
             width: '100%',
-            height: '75vh',
             }
         },
     }));
@@ -128,23 +133,27 @@ export default function MediaCard() {
     }
 
     return (
+    <div className={classes.mainwrapper} style={{ paddingLeft: 40, paddingRight: 40 }}>
+    <Grid container spacing = {5}>
+    <Grid item xs={12}>
     <motion.div
       initial={{ opacity: 1, scaleX: 1 }}
       animate={{ opacity: 1, scaleX: 1 }}
       exit={{ opacity: 0, scaleX: 2 }}
       transition={{duration: 0.5}}
     >
-        <Grid container justify="center"  alignItems="center" xs={12}  spacing={0} className={classes.wrapper}>
-          <Grid item>
+      <Grid container item direction="column" >
+        <Grid container item xs={12}  spacing={1} className={classes.wrapper} justify="center" alignItems="center">
+          <Grid container item xs={1} justify="center" alignItems="center">
           <Arrow
               icon={FaChevronLeft}
               clickFunction = {() => handleClick('left')}
               myRef={leftArrow}
           />
           </Grid>
-          <Grid container justify="center"  alignItems="center" xs={8} sm={10} spacing={0}> 
+          <Grid container justify="center"  alignItems="center" xs={10} sm={10} spacing={0}> 
             {orderActive(projectInfo.filter(checkActive)).map((project, newindex) => (
-              <Grid item justify="center"  alignItems="center" key={project.id} xs={10} sm={4} style={newindex === 1 ? {zIndex:2} : {opacity:0.7, zIndex:0} }>
+              <Grid item justify="center"  alignItems="center" key={project.id} xs={12} sm={4} style={newindex === 1 ? {zIndex:2} : {opacity:0.7, zIndex:0} }>
                     <Zoom in={slideIn} timeout={600}>
                       <Paper elevation = { newindex === 1 ? 15: 0 } 
                               className={ newindex === 1 ? 'maincard' 
@@ -165,7 +174,7 @@ export default function MediaCard() {
                                   image={project.image}
                                   title =  {project.title}
                               />
-                              <CardContent>
+                              <CardContent className={classes.content}>
                                   <Typography gutterBottom variant="h5" component="h2">
                                   {project.title}
                                   </Typography>
@@ -185,7 +194,7 @@ export default function MediaCard() {
                                   image={project.image}
                                   title =  {project.title}
                               />
-                              <CardContent>
+                              <CardContent className={classes.content}>
                                   <Typography gutterBottom variant="h5" component="h2">
                                   {project.title}
                                   </Typography>
@@ -199,7 +208,7 @@ export default function MediaCard() {
                   </Grid>
             ))}
           </Grid>
-          <Grid item>
+          <Grid container item xs={1} justify="center" alignItems="center">
           <Arrow
             icon={FaChevronRight}
             clickFunction = {() => handleClick('right')}
@@ -207,6 +216,24 @@ export default function MediaCard() {
           />
           </Grid>
         </Grid>
+        </Grid>
     </motion.div>
+    </Grid>
+    <Zoom in={true} timeout={600}>
+    <Grid container item xs={12} spacing={2} justify="center" alignItems="center">
+    <Grid item xs={10} sm={5}>
+    <Paper elevation={15}>
+    <Card>
+    </Card>
+    </Paper>
+</Grid>
+<Grid item xs={10} sm={5}>
+    <Card>
+    </Card>
+</Grid>
+</Grid>
+</Zoom>
+</Grid>
+</div>
     );
 }

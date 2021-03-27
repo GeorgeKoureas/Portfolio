@@ -26,6 +26,9 @@ export const light = {
   secondary: {
     main: '#fff',
   },
+  background: {
+    default: '#e9e5df',
+  }
   },
 }
 

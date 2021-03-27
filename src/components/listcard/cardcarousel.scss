@@ -1,6 +1,8 @@
 .arrow-container{
     display: flex;
     cursor: pointer;
+    margin: 0;
+    padding: 0;
   }
 
 
@@ -14,14 +16,16 @@
 
 .sidecardleft{
   height: auto;
-  width: 85%;
-  margin-left: 11.5em;
+  width: 100%;
+  margin: 0;
+    padding: 0;
 }
 
 .sidecardright{
   height: auto;
-  width: 85%;
-  margin-left: -7em;
+  width: 100%;
+  margin: 0;
+    padding: 0;
 }
 
 

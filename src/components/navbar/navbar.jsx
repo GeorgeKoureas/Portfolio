@@ -53,7 +53,6 @@ export default function ButtonAppBar(props) {
       projectactive: {
         color: project ? project.color : theme.palette.primary.main
       },
-
       root: {
           flexGrow: 1,
       },
@@ -76,7 +75,12 @@ export default function ButtonAppBar(props) {
         <Toolbar className={classes.headerLink}>
           <Hidden xsDown>
           <Typography variant="h5" component="h2" className={classes.title} style={ project ? {color: project.color} : {color:"#2CB67D"}}>
-            George.Koureas
+          <Link
+                    to = {`/who`}
+                    style={ project ? {textDecoration: 'none', color: project.color} : {textDecoration: 'none', color:"#2CB67D"}}
+                     >
+                     George.Koureas
+          </ Link>
           </Typography>
           </Hidden>
           <NavLink title='who' color = { project ? project.color : "#2CB67D" } selected={ page === 'who' ? true : false } theme={props.theme} />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
@@ -10,7 +10,7 @@ import { Divider } from '@material-ui/core';
 import Fade from '@material-ui/core/Fade';
 import Chip from '@material-ui/core/Chip';
 
-
+import './heropage.scss'
 
 
 
@@ -18,7 +18,20 @@ import Chip from '@material-ui/core/Chip';
 
 export default function HeroPage(props){
 
+
+    useEffect (() => {
+        window.mediumWidget();
+      });
+
+
     const useStyles = makeStyles((theme) => ({
+        mainwrapper:{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            width: '100%',
+            position: 'relative',
+        },
         wrapper: {
             marginTop: "8em",
             display: 'flex',
@@ -60,14 +73,11 @@ export default function HeroPage(props){
             flexDirection: 'column',
         },
         root: {
-          width: '75%',
-          height: '75vh',
+            width: '95%',
           [theme.breakpoints.down("xs")] : {
             width: '95%',
             height: 'auto',
             marginBottom: 50,}
-        
-    
         },
         media: {
             width: '50%',
@@ -83,9 +93,12 @@ export default function HeroPage(props){
 
     return (
         <Fade in={true} timeout={1200}>
+        <div className={classes.mainwrapper} style={{ paddingLeft: 40, paddingRight: 40 }}>
+        <Grid container spacing = {3} alignItems="center" justify='center'>
+        <Grid item xs={12} sm={10}>
         <div className={classes.wrapper}>
-        <Card className={classes.root} elevation={2}>
-        <Grid container  spacing={1}  direction='column' alignItems="stretch" justify='center'>
+        <Card elevation={2}>
+        <Grid container item spacing={1}  direction='column' alignItems="stretch" justify='center'>
         <Grid item xs={12} classes={{ root: classes.hero }}>
            <br/>
            <br/>
@@ -103,7 +116,7 @@ export default function HeroPage(props){
         <Typography Wrap variant="body1" component="p" style={{marginBottom: 15}}>
           Welcome to my personal Portfolio! My name is George and I am 
           a 25-year old Mechanical Engineer turned Product Enthusiast.
-          I am really pationate about turning data into scalable and impactful software products either to solve a problem, or simply for fun.
+          I am really passionate about turning data into scalable and impactful software products either to solve a problem, or simply for fun.
           <br/>
           <br/>
           Ever since I found out what Product Management is all about, I've been focusing on honing my Tech, UI\UX and Business skills.
@@ -137,6 +150,25 @@ export default function HeroPage(props){
         </Grid>
         </Grid>
         </Card>
+        </div>
+        </Grid>
+            <Grid container item xs={12} sm={10}>
+            <Grid item xs={12} sm={6}>
+                <Card elevation={2}>
+                <Typography style={{ paddingTop: 10, color: '#2CB67D' }} align="center" gutterBottom variant="h5" component="h2">
+                 Things I write:
+                </Typography>
+                <Divider classes={{root: classes.divider}}  variant="middle"></Divider>
+                <div style={{ padding: 10}} id="medium-widget">
+                </div>
+                </Card>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+                <Card elevation={2}>
+                </Card>
+            </Grid>
+            </Grid>
+        </Grid>
         </div>
         </Fade>
       );
