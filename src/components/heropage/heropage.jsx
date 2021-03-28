@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Hidden from '@material-ui/core/Hidden'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
@@ -38,8 +39,9 @@ export default function HeroPage(props){
             justifyContent: 'center',
             width: '100%',
         },
-        tools: {
-            display: 'flex',
+        card:{
+            height: '100%',
+            padding: 0,
         },
         divider: {
             background: '#2CB67D',
@@ -66,16 +68,15 @@ export default function HeroPage(props){
         large: {
                 width: theme.spacing(20),
                 height: theme.spacing(20),
-
         },
         content: {
             display: 'flex',
             flexDirection: 'column',
         },
         root: {
-            width: '95%',
+            width: '100%',
           [theme.breakpoints.down("xs")] : {
-            width: '95%',
+            width: '100%',
             height: 'auto',
             marginBottom: 50,}
         },
@@ -93,10 +94,9 @@ export default function HeroPage(props){
 
     return (
         <Fade in={true} timeout={1200}>
-        <div className={classes.mainwrapper} style={{ paddingLeft: 40, paddingRight: 40 }}>
-        <Grid container spacing = {3} alignItems="center" justify='center'>
+        <div className={classes.mainwrapper} style={{ paddingLeft: 15, paddingRight: 15 }}>
+        <Grid container spacing = {3} alignItems="stretch" justify='center' style={{ marginTop: '6em' }}>
         <Grid item xs={12} sm={10}>
-        <div className={classes.wrapper}>
         <Card elevation={2}>
         <Grid container item spacing={1}  direction='column' alignItems="stretch" justify='center'>
         <Grid item xs={12} classes={{ root: classes.hero }}>
@@ -113,48 +113,69 @@ export default function HeroPage(props){
         </Grid>
         <Grid item xs={12}  justify='center'>
         <div className={classes.heroquote}>
-        <Typography Wrap variant="body1" component="p" style={{marginBottom: 15}}>
-          Welcome to my personal Portfolio! My name is George and I am 
-          a 25-year old Mechanical Engineer turned Product Enthusiast.
-          I am really passionate about turning data into scalable and impactful software products either to solve a problem, or simply for fun.
-          <br/>
-          <br/>
-          Ever since I found out what Product Management is all about, I've been focusing on honing my Tech, UI\UX and Business skills.
-          I created this portfolio to showcase my progress and actually practice a bit on my React skills.
-
-         
-          <br/>
-          <br/>
-          In my free time, I like to enjoy a warm cup of coffe and a good book or video game. You can also often find me blasting Hip-Hop as loud as possible,
-          roaming around town with my friends or writing about ideas and products.
-          <br/>
-          <br/>
-          <div classeName={classes.tools}>
-          Skills/Tools:
-          <Chip size='small' style={{ marginLeft: 5}} variant="outlined" color="primary" label="Figma" />
-          <Chip size='small' style={{ marginLeft: 5}} variant="outlined" color="primary" label="AdobeXD" />
-          <Chip size='small' style={{ marginLeft: 5}} variant="outlined" color="primary" label="Customer Development" />
-          <Chip size='small' style={{ marginLeft: 5}} variant="outlined" color="primary" label="Django" />
-          <Chip size='small' style={{ marginLeft: 5}} variant="outlined" color="primary" label="React" />
-          <Chip size='small' style={{ marginLeft: 5}} variant="outlined" color="primary" label="Prioritization" />
-          <Chip size='small' style={{ marginLeft: 5}} variant="outlined" color="primary" label="Wireframing" />
-          <Chip size='small' style={{ marginLeft: 5}} variant="outlined" color="primary" label="Jira" />
-          <Chip size='small' style={{ marginLeft: 5}} variant="outlined" color="primary" label="Project Management" />
-          <Chip size='small' style={{ marginLeft: 5}} variant="outlined" color="primary" label="Notion" />
-          </div>
-          <br/>
-
-          Get in touch if you want to discuss Products, Tech, Business or Music, and let's start with Why!
+        <Grid container direction="column" justify='center' alignItems='center'>
+        <Grid item xs={12}>
+        <Hidden smUp>
+        <Typography Wrap variant="h5" component="p" style={{ padding: 10, color: '#2CB67D' }}> 
+            George.Koureas
         </Typography>
+        </Hidden>
+        </Grid>
+        <Grid item xs={12}>
+        <Typography Wrap variant="subtitle1" component="p" style={{ padding: 10 }}> 
+            Product <span style={{ color:'#2CB67D' }}>|</span> Engineering <span style={{ color:'#2CB67D' }}>|</span> Business
+        </Typography>
+        </Grid>
+        <Grid item xs={12}>
+        <Typography Wrap variant="body2" component="p" style={{marginBottom: 15}}>
+          Transitioned from Mechanical Engineering to Product management with the sole purpose of turning data into scalable and impactful software products either to solve a problem, or simply for fun.
+          <br/>
+          <br/>
+          Welcome to my private portfolio. Here you can find things I write or read as well as the projects that I have been working on. If you are interested feel free to get in touch!
+        </Typography>
+        </Grid>
+        <Grid container item xs={12} style={{ paddingBottom: 5 }} direction="column" alignItems='center' justify='center'>
+          <Grid item xs={12}>
+          <Typography Wrap variant="subtitle1" component="p" style={{ padding: 5 }}>
+          Skills <span style={{ color:'#2CB67D' }}>|</span> Tools:
+          </Typography>
+          </Grid>
+          <Grid container item xs={12} spacing={2}>
+          <Grid container direction="column" item xs={6} sm={3}>
+          <Chip size='small' variant="outlined" color="primary" label="Figma" />
+          <br/>
+          <Chip size='small' variant="outlined" color="primary" label="AdobeXD" />
+          <br/>
+          <Chip size='small' variant="outlined" color="primary" label="Customer Development" />
+          </Grid>
+          <Grid container direction="column" item xs={6} sm={3}>
+          <Chip size='small' variant="outlined" color="primary" label="Django" />
+          <br/>
+          <Chip size='small' variant="outlined" color="primary" label="React" />
+          <br/>
+          <Chip size='small' variant="outlined" color="primary" label="Prioritization" />
+          </Grid>
+          <Grid container direction="column" item xs={6} sm={3}>
+          <Chip size='small' variant="outlined" color="primary" label="Wireframing" />
+          <br/>
+          <Chip size='small' variant="outlined" color="primary" label="Jira" />
+          <br/>
+          <Chip size='small' variant="outlined" color="primary" label="Project Management" />
+          </Grid>
+          <Grid container direction="column" item xs={6} sm={3}>
+          <Chip size='small' variant="outlined" color="primary" label="Notion" />
+          </Grid>
+          </Grid>
+        </Grid>
+        </Grid>
         </div>
         </Grid>
         </Grid>
+        <br />
         </Card>
-        </div>
         </Grid>
-            <Grid container item xs={12} sm={10}>
-            <Grid item xs={12} sm={6}>
-                <Card elevation={2}>
+            <Grid item  alignItems="stretch" xs={12} sm={5}>
+                <Card elevation={2} className={classes.card}>
                 <Typography style={{ paddingTop: 10, color: '#2CB67D' }} align="center" gutterBottom variant="h5" component="h2">
                  Things I write:
                 </Typography>
@@ -163,12 +184,12 @@ export default function HeroPage(props){
                 </div>
                 </Card>
             </Grid>
-            <Grid item xs={12} sm={6}>
-                <Card elevation={2}>
-                </Card>
+            <Grid item  alignItems="stretch" xs={12} sm={5}>
+                {/* <Card elevation={2} className={classes.card}>
+                    Test
+                </Card> */}
             </Grid>
             </Grid>
-        </Grid>
         </div>
         </Fade>
       );

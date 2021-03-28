@@ -64,11 +64,11 @@ export default function DetailCard(props){
         fl:{
             display: 'flex',
             justifyContent: 'center',
+            marginBottom: 15,
         },
         root: {
           display: 'flex',
           width: '75%',
-          height: '75vh',
           [theme.breakpoints.down("xs")] : {
             width: '95%',
             height: 'auto'}
@@ -103,7 +103,8 @@ export default function DetailCard(props){
              title =  {project.title}
             />
             </Hidden>
-            <Grid container   spacing={0} style={{paddingRight: 15}}>
+            <Grid container spacing={0} style={{paddingRight: 15}}>
+            <Grid container item xs={12} style={{paddingBottom: 0, marginBottom: 0}}>
             <Grid item xs={11}>
             <CardContent style={{paddingBottom: 0, marginBottom: 0}}>
                 <Typography gutterBottom variant="h5" component="h2">
@@ -112,7 +113,23 @@ export default function DetailCard(props){
                 <Typography Wrap variant="body2" component="p">
                 {project.description}
                 </Typography>
-                <Divider classes={{root: classes.divider}} variant="fullWidth" style={{ marginTop: '1em' }} />
+            </CardContent>
+            </Grid>
+            <Grid item xs={1}>
+            <CardActions >
+                <IconButton
+                    component={Link}
+                    to='/what'>
+                    <ArrowBackIcon style={{ color: project.color }}/>
+                </IconButton>
+            </CardActions>
+            </Grid>
+            <Grid container item xs={12}>
+            <CardContent style={{paddingBottom: 0, marginBottom: 0}}>
+                <Grid item xs={12}>
+                <Divider classes={{root: classes.divider}} variant="fullWidth" />
+                </Grid>
+                <Grid item xs={12}>
                 <Typography className={classes.text} Wrap variant="body1" component="p" style={{ color: project.color }}>
                 Description:
                 </Typography>
@@ -131,16 +148,9 @@ export default function DetailCard(props){
                 <div className={classes.fl}>
                 {Object.keys(project.links).map((linkName, link) => (<Button size="small" href={project.links[linkName]} target="_blank" color="default">{linkName}</Button>))}
                 </div>
+                </Grid>
             </CardContent>
             </Grid>
-            <Grid item xs={1}>
-            <CardActions >
-                <IconButton
-                    component={Link}
-                    to='/what'>
-                    <ArrowBackIcon style={{ color: project.color }}/>
-                </IconButton>
-            </CardActions>
             </Grid>
             </Grid>
         </Card>
