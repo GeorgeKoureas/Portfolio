@@ -115,7 +115,7 @@ export default function HeroPage(props){
         <Grid container item xs={12} direction='column' justify='center'>
         <div className={classes.heroquote}>
         <Grid container direction="column" justify='center' alignItems='center'>
-        <Grid container item xs={12}>
+        <Grid item>
         <Hidden smUp>
         <Typography Wrap variant="h5" component="p" style={{ padding: 10, color: '#2CB67D' }}> 
             George.Koureas
