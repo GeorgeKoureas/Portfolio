@@ -3,6 +3,7 @@ import Hidden from '@material-ui/core/Hidden'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import Grid from '@material-ui/core/Grid';
+import Item from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Avatar from '@material-ui/core/Avatar';
 import George from "../../assets/hero.png";
@@ -127,12 +128,14 @@ export default function HeroPage(props){
         </Typography>
         </Grid>
         <Grid item xs={12}>
+        <Item>
         <Typography Wrap variant="body2" component="p" style={{marginBottom: 15}}>
           Transitioned from Mechanical Engineering to Product management with the sole purpose of turning data into scalable and impactful software products either to solve a problem, or simply for fun.
           <br/>
           <br/>
           Welcome to my private portfolio. Here you can find things I write or read as well as the projects that I have been working on. If you are interested feel free to get in touch!
         </Typography>
+        </Item>
         </Grid>
         <Grid container item xs={12} style={{ paddingBottom: 5 }} direction="column" alignItems='center' justify='center'>
           <Grid item xs={12}>
