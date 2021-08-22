@@ -113,7 +113,6 @@ export default function HeroPage(props){
             </div>
         </Grid>
         <Grid container item xs={12} direction='column' justify='center'>
-        <div className={classes.heroquote}>
         <Grid container direction="column" justify='center' alignItems='center'>
         <Grid item>
         <Hidden smUp>
@@ -171,7 +170,6 @@ export default function HeroPage(props){
           </Grid>
         </Grid>
         </Grid>
-        </div>
         </Grid>
         </Grid>
         <br />
