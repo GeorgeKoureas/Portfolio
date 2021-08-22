@@ -51,12 +51,6 @@ export default function HeroPage(props){
 
             margin: 4,
         },
-        heroquote: {
-            display: 'flex',
-            justifyContent: 'center',
-            marginLeft: 17,
-            marginRight: 17,
-        },
         heroavatar: {
             display: 'flex',
             justifyContent: 'center',
@@ -128,7 +122,7 @@ export default function HeroPage(props){
         </Grid>
         <Grid item xs={12}>
         <Item>
-        <Typography Wrap variant="body2" component="p" style={{marginBottom: 15}}>
+        <Typography Wrap variant="body2" component="p" style={{marginBottom: 15, padding: 15}}>
           Transitioned from Mechanical Engineering to Product management with the sole purpose of turning data into scalable and impactful software products either to solve a problem, or simply for fun.
           <br/>
           <br/>
