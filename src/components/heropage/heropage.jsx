@@ -92,7 +92,7 @@ export default function HeroPage(props){
         <Grid container xs={12} sm={10} spacing = {3} style={{ marginTop: '6em' }}>
         <Grid item>
         <Card elevation={2}>
-        <Grid container item spacing={1}  direction='column' alignItems="stretch" justify='center'>
+        <Grid container item spacing={1}  direction='column' justify='center'>
         <Grid item xs={12} classes={{ root: classes.hero }}>
            <br/>
            <br/>
