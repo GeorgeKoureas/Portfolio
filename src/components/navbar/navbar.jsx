@@ -87,7 +87,7 @@ export default function ButtonAppBar(props) {
           <NavLink title='what' color = { project ? project.color : "#2CB67D" } selected={ page === 'what' ? true : false } theme={props.theme} />
           <NavLink title='why' color = { project ? project.color : "#2CB67D" } selected={page === 'why' ? true : false } theme={props.theme} />
           <div className={props.theme ? 'header-link-light' : 'header-link-dark'} >
-            <a target="_blank" href="http://www.medium.com/@georgekoureas" style={{ textDecoration: 'none'}} theme={props.theme}>
+            <a target="_blank" rel="noreferrer" href="http://www.medium.com/@georgekoureas" style={{ textDecoration: 'none'}} theme={props.theme}>
               <div className={"header-content"}>
                     <h3>blog</h3>
               </div>
