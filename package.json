@@ -15,6 +15,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
+    "react-infinite-scroll-component": "^6.1.0",
     "react-progressive-image": "^0.6.0",
     "react-router-dom": "^5.2.0",
     "react-script-tag": "^1.1.2",

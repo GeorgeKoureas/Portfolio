@@ -66,5 +66,4 @@ export const projectInfo = [
         links: {Dribbble: "https://dribbble.com/GeorgeKoureas"},
         color: '#FFDE59',
     },
-    
 ]

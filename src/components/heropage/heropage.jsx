@@ -29,7 +29,6 @@ export default function HeroPage(props){
     const useStyles = makeStyles((theme) => ({
         mainwrapper:{
             display: 'flex',
-            flexDirection: 'column',
             justifyContent: 'center',
             width: '100%',
             position: 'relative',
@@ -90,8 +89,8 @@ export default function HeroPage(props){
     return (
         <Fade in={true} timeout={1200}>
         <div className={classes.mainwrapper} style={{ paddingLeft: 15, paddingRight: 15 }}>
-        <Grid container spacing = {3} alignItems="stretch" justify='center' style={{ marginTop: '6em' }}>
-        <Grid item xs={12} sm={10}>
+        <Grid container xs={12} sm={10} spacing = {3} alignItems="stretch" style={{ marginTop: '6em' }}>
+        <Grid item>
         <Card elevation={2}>
         <Grid container item spacing={1}  direction='column' alignItems="stretch" justify='center'>
         <Grid item xs={12} classes={{ root: classes.hero }}>
@@ -169,7 +168,7 @@ export default function HeroPage(props){
         <br />
         </Card>
         </Grid>
-            <Grid item  alignItems="stretch" xs={12} sm={5}>
+            <Grid item xs={12} sm={6}>
                 <Card elevation={2} className={classes.card}>
                 <Typography style={{ paddingTop: 10, color: '#2CB67D' }} align="center" gutterBottom variant="h5" component="h2">
                  Things I write:
