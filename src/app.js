@@ -6,7 +6,6 @@ import Brightness3Icon from '@material-ui/icons/Brightness3';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import Navbar from './components/navbar/navbar';
 import InfiniteScrollList from './components/infinite_scroll_list/infinite_scroll_list'
-import MediaCard from './components/listcard/cardcarousel';
 import DetailCard from './components/detailcard/detailcard';
 import HeroPage from './components/heropage/heropage';
 import WhyPage from './components/whypage/whypage';  
