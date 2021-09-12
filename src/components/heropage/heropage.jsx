@@ -89,7 +89,7 @@ export default function HeroPage(props){
     return (
         <Fade in={true} timeout={1200}>
         <div className={classes.mainwrapper} style={{ paddingLeft: 15, paddingRight: 15 }}>
-        <Grid container xs={12} sm={10} spacing = {3} alignItems="stretch" style={{ marginTop: '6em' }}>
+        <Grid container xs={12} sm={10} spacing = {3} style={{ marginTop: '6em' }}>
         <Grid item>
         <Card elevation={2}>
         <Grid container item spacing={1}  direction='column' alignItems="stretch" justify='center'>
