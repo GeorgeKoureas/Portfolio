@@ -57,18 +57,19 @@ function App() {
       setTheme(!theme); 
   }
 
-  useEffect(() => {
 
-    ReactGa.pageview('/who')
-
-  }, [])
 
 
     const icon = !theme ? <Brightness7Icon  fontSize='small' /> : <Brightness3Icon fontSize='small' /> 
 
     const appliedTheme = createMuiTheme(theme ? light : dark)
 
+    useEffect(() => {
 
+      ReactGa.pageview(window.location.pathname + window.location.search)
+  
+    });
+    
       return(
         <ThemeProvider theme={appliedTheme}>
         <CssBaseline />
