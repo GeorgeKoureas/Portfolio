@@ -48,8 +48,9 @@ export const dark = {
 
 }
 
+ReactGa.initialize('G-77HSFM0TY8')
 
-  function App() {
+function App() {
     const [theme, setTheme] = useState(false)
 
     const handleEvent = event => {
@@ -57,7 +58,6 @@ export const dark = {
   }
 
   useEffect(() => {
-    ReactGa.initialize('G-77HSFM0TY8')
 
     ReactGa.pageview(window.location.pathname + window.location.search)
 
