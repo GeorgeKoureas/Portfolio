@@ -48,7 +48,7 @@ export const dark = {
 
 }
 
-ReactGa.initialize('G-77HSFM0TY8')
+ReactGa.initialize('G-9DC5CVYT6R')
 
 function App() {
     const [theme, setTheme] = useState(false)
