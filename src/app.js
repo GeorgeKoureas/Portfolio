@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import ReactGa from 'react-ga'
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Brightness7Icon  from '@material-ui/icons/Brightness7';
@@ -54,6 +55,14 @@ export const dark = {
     const handleEvent = event => {
       setTheme(!theme); 
   }
+
+  useEffect(() => {
+    ReactGa.initialize('G-77HSFM0TY8')
+
+    ReactGa.pageview(window.location.pathname + window.location.search)
+
+  }, [])
+
 
     const icon = !theme ? <Brightness7Icon  fontSize='small' /> : <Brightness3Icon fontSize='small' /> 
 
