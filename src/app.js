@@ -59,7 +59,7 @@ function App() {
 
   useEffect(() => {
 
-    ReactGa.pageview(window.location.pathname + window.location.search)
+    ReactGa.pageview('/who')
 
   }, [])
 
