@@ -21,9 +21,6 @@ import './heropage.scss'
 export default function HeroPage(props){
 
 
-    useEffect (() => {
-        window.mediumWidget();
-      });
 
 
     const useStyles = makeStyles((theme) => ({
