@@ -12,8 +12,6 @@ import { Divider } from '@material-ui/core';
 import Fade from '@material-ui/core/Fade';
 import Chip from '@material-ui/core/Chip';
 
-import './heropage.scss'
-
 
 
 
@@ -171,7 +169,7 @@ export default function HeroPage(props){
                  Things I write:
                 </Typography>
                 <Divider classes={{root: classes.divider}}  variant="middle"></Divider>
-                <div style={{ padding: 10}} id="medium-widget">
+                <div style={{ padding: 10}}>
                 </div>
                 </Card>
             </Grid>
