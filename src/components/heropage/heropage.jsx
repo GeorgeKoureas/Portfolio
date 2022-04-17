@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Hidden from '@material-ui/core/Hidden'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
+import { Box } from '@material-ui/core';
+import Link from '@material-ui/core/Link';
+import { CardContent } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Item from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -11,14 +15,16 @@ import Typography from '@material-ui/core/Typography';
 import { Divider } from '@material-ui/core';
 import Fade from '@material-ui/core/Fade';
 import Chip from '@material-ui/core/Chip';
+import Parser from 'rss-parser';
+import { JSDOM } from 'jsdom';
+import { CardActionArea } from '@material-ui/core';
+
 
 
 
 
 
 export default function HeroPage(props){
-
-
 
 
     const useStyles = makeStyles((theme) => ({
@@ -76,15 +82,65 @@ export default function HeroPage(props){
                 height: '100%'
               }
         },
+        images: {
+            maxWidth: '30%',
+            maxHeight: '150px',
+            overflow: 'hidden',
+            borderRadius: 15,
+            padding: 5,
+            margin: 1,
+
+        },
+        article: {
+            display: 'flex',
+            alignItems: 'center',
+            margin: 5,
+        }
     }))
 
     const classes = useStyles();
+    const [posts, setPosts] = useState([]);
+
+
+    useEffect(() => {
+        const parser = new Parser()
+
+        const fetchFeed = async () => {
+          const url = `/.netlify/functions/posts-get`
+          const feed = await parser.parseURL(url)
+          console.log(feed)
+
+
+          
+          return feed.items.slice(0, 3)
+        }
+
+        const fetchPosts = async () => {
+            const items = await fetchFeed();
+            const posts = items.map((item, i) => {
+                const content = item["content:encoded"];
+                const dom = new JSDOM(content);
+                return {
+                    id: i,
+                    title: item.title,
+                    date: item.isoDate,
+                    image: dom.window.document.querySelector("img") .src.replace("max/1024", "max/3840"),
+                    link: item.link,
+                    tags: item.categories,
+                    content,
+                  };
+            })
+            console.log(posts)
+            setPosts(posts) 
+        }
+        fetchPosts()
+      }, [])
 
 
     return (
         <Fade in={true} timeout={1200}>
         <div className={classes.mainwrapper} style={{ paddingLeft: 15, paddingRight: 15 }}>
-        <Grid container xs={12} sm={10} spacing = {3} style={{ marginTop: '6em' }}>
+        <Grid container item xs={12} sm={10} spacing = {3} style={{ marginTop: '6em' }}>
         <Grid item xs={12}>
         <Card elevation={2}>
         <Grid container item spacing={1}  direction='column' justify='center'>
@@ -104,19 +160,19 @@ export default function HeroPage(props){
         <Grid container item direction="column" justify='center' alignItems='center'>
         <Grid item>
         <Hidden smUp>
-        <Typography Wrap variant="h5" component="p" style={{ padding: 10, color: '#2CB67D' }}> 
+        <Typography wrap variant="h5" component="p" style={{ padding: 10, color: '#2CB67D' }}> 
             George.Koureas
         </Typography>
         </Hidden>
         </Grid>
         <Grid item xs={12}>
-        <Typography Wrap variant="subtitle1" component="p" style={{ padding: 10 }}> 
+        <Typography wrap variant="subtitle1" component="p" style={{ padding: 10 }}> 
             Product <span style={{ color:'#2CB67D' }}>|</span> Engineering <span style={{ color:'#2CB67D' }}>|</span> Business
         </Typography>
         </Grid>
         <Grid item xs={12}>
         <Item>
-        <Typography Wrap variant="body2" component="p" style={{marginBottom: 15, padding: 15}}>
+        <Typography wrap variant="body2" component="p" style={{marginBottom: 15, padding: 15}}>
           Transitioned from Mechanical Engineering to Product management with the sole purpose of turning data into scalable and impactful software products either to solve a problem, or simply for fun.
           <br/>
           <br/>
@@ -126,7 +182,7 @@ export default function HeroPage(props){
         </Grid>
         <Grid container item xs={12} style={{ paddingBottom: 5 }} direction="column" alignItems='center' justify='center'>
           <Grid item xs={12}>
-          <Typography Wrap variant="subtitle1" component="p" style={{ padding: 5 }}>
+          <Typography wrap variant="subtitle1" component="p" style={{ padding: 5 }}>
           Skills <span style={{ color:'#2CB67D' }}>|</span> Tools:
           </Typography>
           </Grid>
@@ -169,11 +225,40 @@ export default function HeroPage(props){
                  Things I write:
                 </Typography>
                 <Divider classes={{root: classes.divider}}  variant="middle"></Divider>
-                <div style={{ padding: 10}}>
-                </div>
+                    {posts.map((post) => (
+                        <Card className={classes.article} key={post.id}>
+                            <CardActionArea className={classes.article} href={ post.link }>
+                                <Box className={classes.images}>
+                                    <Hidden xsDown>
+                                    <CardMedia
+                                        component="img"
+                                        image={post.image}
+                                        alt={post.title}
+                                        style={{ borderRadius: 10, width: '100%', objectFit: 'fill' }}
+                                    />
+                                    </Hidden>
+                                </Box>
+                                <Box style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', width: '100%'}}>
+                                    <Box>
+                                        <CardContent >
+                                        <Typography component="div" variant="h6">
+                                            {post.title}
+                                        </Typography>
+                                        <Typography variant="subtitle3" color="text.secondary" component="div">
+                                            {post.pubDate}
+                                        </Typography>
+                                        </CardContent>
+                                    </Box>
+                                    <Box style={{ display: 'flex', justifyContent:'flex-end', padding: 15 }} >
+                                        <Link style={{ fontWeight: 'bold' }} href={ post.link } underline="none">Read on Medium</Link>
+                                    </Box>
+                                </Box>
+                            </CardActionArea>
+                        </Card>
+                    ))}
                 </Card>
             </Grid>
-            <Grid item  alignItems="stretch" xs={12} sm={5}>
+            <Grid item xs={12} sm={5}>
                 {/* <Card elevation={2} className={classes.card}>
                     Test
                 </Card> */}
