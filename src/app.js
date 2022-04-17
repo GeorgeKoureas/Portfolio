@@ -60,6 +60,8 @@ function App() {
 
 
 
+
+
     const icon = !theme ? <Brightness7Icon  fontSize='small' /> : <Brightness3Icon fontSize='small' /> 
 
     const appliedTheme = createMuiTheme(theme ? light : dark)
