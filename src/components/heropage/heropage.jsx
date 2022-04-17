@@ -124,7 +124,7 @@ export default function HeroPage(props){
                     id: i,
                     title: item.title,
                     date: item.isoDate,
-                    image: dom.window.document.querySelector("img") .src.replace("max/1024", "max/3840"),
+                    image: dom.window.document.querySelector("img").src.replace("max/1024", "max/3840"),
                     link: item.link,
                     tags: item.categories,
                     content,
