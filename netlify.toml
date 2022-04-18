@@ -1,9 +1,7 @@
 [build]
     command = "npm run build"
+    functions = "lambda"
     publish = "build/"
-
-[functions]
-    directory = ".netlify/functions/"
 
 
 [[redirects]]
