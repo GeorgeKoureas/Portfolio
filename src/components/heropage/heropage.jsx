@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Hidden from '@material-ui/core/Hidden'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
+// import CardMedia from '@material-ui/core/CardMedia';
 import { Box } from '@material-ui/core';
 import { CardContent } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
@@ -14,6 +15,7 @@ import { Divider } from '@material-ui/core';
 import Fade from '@material-ui/core/Fade';
 import Chip from '@material-ui/core/Chip';
 import Parser from 'rss-parser';
+// import { JSDOM } from 'jsdom';
 import { CardActionArea } from '@material-ui/core';
 
 
@@ -113,10 +115,12 @@ export default function HeroPage(props){
             const items = await fetchFeed();
             const posts = items.map((item, i) => {
                 const content = item["content:encoded"];
+                // const dom = new JSDOM(content);
                 return {
                     id: i,
                     title: item.title,
                     date: item.isoDate,
+                    // image: dom.window.document.querySelector("img").src.replace("max/1024", "max/3840"),
                     link: item.link,
                     tags: item.categories,
                     content,
