@@ -4,7 +4,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Brightness7Icon  from '@material-ui/icons/Brightness7';
 import Brightness3Icon from '@material-ui/icons/Brightness3';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import Navbar from './components/navbar/navbar';
 import InfiniteScrollList from './components/infinite_scroll_list/infinite_scroll_list'
 import DetailCard from './components/detailcard/detailcard';
