@@ -110,7 +110,7 @@ export default function DetailCard(props){
                 <Typography gutterBottom variant="h5" component="h2">
                 {project.title}
                 </Typography>
-                <Typography Wrap variant="body2" component="p">
+                <Typography wrap variant="body2" component="p">
                 {project.description}
                 </Typography>
             </CardContent>
@@ -130,19 +130,19 @@ export default function DetailCard(props){
                 <Divider classes={{root: classes.divider}} variant="fullWidth" />
                 </Grid>
                 <Grid item xs={12}>
-                <Typography className={classes.text} Wrap variant="body1" component="p" style={{ color: project.color }}>
+                <Typography className={classes.text} wrap variant="body1" component="p" style={{ color: project.color }}>
                 Description:
                 </Typography>
-                <Typography className={classes.text} Wrap variant="body2" component="p">
+                <Typography className={classes.text} wrap variant="body2" component="p">
                 {project.description_large}
                 </Typography>
-                <Typography className={classes.text} Wrap variant="body1" component="p" style={{ color: project.color }}>
+                <Typography className={classes.text} wrap variant="body1" component="p" style={{ color: project.color }}>
                 Stack:
                 </Typography>
                 <div className={classes.fl}>
                 {project.stack.map(stack => (<Chip size='small' style={{ marginLeft: 5}} variant="outlined" classes={{root: classes.stack}} label={stack} />))}
                 </div>
-                <Typography className={classes.text} Wrap variant="body1" component="p" style={{ color: project.color }}>
+                <Typography className={classes.text} wrap variant="body1" component="p" style={{ color: project.color }}>
                 Links:
                 </Typography>
                 <div className={classes.fl}>

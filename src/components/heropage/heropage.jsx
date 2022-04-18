@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import { Box } from '@material-ui/core';
-import Link from '@material-ui/core/Link';
 import { CardContent } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Item from '@material-ui/core/Grid';
@@ -108,9 +107,6 @@ export default function HeroPage(props){
         const fetchFeed = async () => {
           const url = `/.netlify/functions/posts-get`
           const feed = await parser.parseURL(url)
-          console.log(feed)
-
-
           
           return feed.items.slice(0, 3)
         }
@@ -244,13 +240,13 @@ export default function HeroPage(props){
                                         <Typography component="div" variant="h6">
                                             {post.title}
                                         </Typography>
-                                        <Typography variant="subtitle3" color="text.secondary" component="div">
+                                        <Typography variant="subtitle2" component="div">
                                             {post.pubDate}
                                         </Typography>
                                         </CardContent>
                                     </Box>
                                     <Box style={{ display: 'flex', justifyContent:'flex-end', padding: 15 }} >
-                                        <Link style={{ fontWeight: 'bold' }} href={ post.link } underline="none">Read on Medium</Link>
+                                        <Typography style={{ fontWeight: 'bold', color: '#2CB67D' }} href={ post.link } underline="none">Read on Medium</Typography>
                                     </Box>
                                 </Box>
                             </CardActionArea>

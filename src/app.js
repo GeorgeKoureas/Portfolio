@@ -64,7 +64,7 @@ function App() {
 
     const icon = !theme ? <Brightness7Icon  fontSize='small' /> : <Brightness3Icon fontSize='small' /> 
 
-    const appliedTheme = createMuiTheme(theme ? light : dark)
+    const $appliedTheme = createMuiTheme(theme ? light : dark)
 
     useEffect(() => {
 
@@ -73,7 +73,7 @@ function App() {
     });
 
       return(
-        <ThemeProvider theme={appliedTheme}>
+        <ThemeProvider theme={$appliedTheme}>
         <CssBaseline />
         <Router>
           <Switch>
