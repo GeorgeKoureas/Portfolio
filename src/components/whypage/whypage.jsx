@@ -54,7 +54,7 @@ export default function WhyPage(props){
                 Technolgy
                 <Divider classes={{root: classes.divider}} variant="width"/>
             </Typography>
-            <Typography className={classes.text} Wrap variant="body2" component="p">
+            <Typography className={classes.text} wrap variant="body2" component="p">
                 - To learn the technologies that shape our present and future.
                 <br/>
                 - To understand engineer's pain points and promote collaboration and problem solving.
@@ -69,7 +69,7 @@ export default function WhyPage(props){
                 Design
                 <Divider classes={{root: classes.divider}} variant="width"/>
             </Typography>
-            <Typography className={classes.text} Wrap variant="body2" component="p">
+            <Typography className={classes.text} wrap variant="body2" component="p">
                 - To learn how we interact with the world around us and the products that we use.
                 <br/>
                 - To create user-centric designs that inspire and enable a unique experience.
@@ -86,7 +86,7 @@ export default function WhyPage(props){
                 <Divider classes={{root: classes.divider}} variant="width"/>
 
             </Typography>
-            <Typography className={classes.text} Wrap variant="body2" component="p">
+            <Typography className={classes.text} wrap variant="body2" component="p">
                 - To learn how to acquire financial freedom.
                 <br/>
                 - To use this wealth to add value and impact.
