@@ -6,8 +6,6 @@ import BeehiveMin from './assets/BeehivePresentationImage-min.png';
 import MinervaMin from './assets/MinervaPresentationImage-min.png';
 import TrackerMin from './assets/CovidPresentationImage-min.png';
 import PortfolioMin from './assets/PortfolioPresentationImage-min.png';
-import UIUX from './assets/UI_UXPresentationImage.jpg';
-
 
 
 export const projectInfo = [
