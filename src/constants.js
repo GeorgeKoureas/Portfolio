@@ -55,15 +55,4 @@ export const projectInfo = [
         links: {Github: "https://github.com/GeorgeKoureas/The-Beehive"},
         color: '#387D5F',
     },
-        {
-        id: 4,
-        title: "Mockups & Wireframes",
-        image: UIUX,
-        imagemin: PortfolioMin,
-        description: "Design is an integral part of a Product's Experience. For that reason I create wireframes, mockups and prototypes of new ideas.",
-        description_large: "I often experiment with User Centric or original designs, trying to bring forth a product's highlights. From tinkering with designs of my favorite products, to creating designs of my own, deciding on a product's User Experience is really fascinating. I upload many of these ideas on Dribbble so make sure to check them out. For the design, I use either AdobeXD or Figma.",
-        stack: ["AdobeXD", "Figma"],
-        links: {Dribbble: "https://dribbble.com/GeorgeKoureas"},
-        color: '#FFDE59',
-    },
 ]
