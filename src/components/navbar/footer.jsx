@@ -81,11 +81,6 @@ export default function FloatingActionButtons(props) {
               <GitHubIcon color="secondary" />
             </Fab>
             </Zoom>
-            <Zoom in={showChildren} unmountOnExit style={{ transitionDelay: showChildren ? '100ms' : '0ms' }}>
-            <Fab classes={{ root: classes.projectactive }} aria-label="github" size="small" style={fabChildStyle} href="https://dribbble.com/GeorgeKoureas" target="_blank">
-              <SiDribbble style={{color: "white" }} />
-            </Fab>
-            </Zoom>
         <Fab classes={{ root: showChildren ? classes.error : classes.projectactive }}  aria-label="share" onClick={onClick} style={fabStyle}>
           { showChildren ? <CloseIcon color="secondary" className={ showChildren ? "rotatein" : ""}  /> : <LinkIcon color="secondary" className={ showChildren ? "" : "rotateout"}  /> }
         </Fab>
