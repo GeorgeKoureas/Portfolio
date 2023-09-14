@@ -6,7 +6,6 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import CloseIcon from '@material-ui/icons/Close';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import Zoom from '@material-ui/core/Zoom';
-import { SiDribbble } from 'react-icons/si'
 import { projectInfo } from '../../constants'
 import './footer.scss'
 
@@ -52,11 +51,6 @@ export default function FloatingActionButtons(props) {
     bottom: 20,
     position: 'fixed'
 };
-  const fabChildStyle = {
-    right: 48,
-    bottom: 85,
-    position: 'fixed'
-  }
   const fab2ChildStyle = {
     right: 48,
     bottom: 135,
